@@ -67,7 +67,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-# bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -168,11 +168,16 @@ bindsym $mod+r mode "resize"
 
 # Start polybar
 exec_always --no-startup-id ~/.config/i3/polybar.sh
+exec_always --no-startup-id compton -b
+
+bindsym $mod+p exec "~/.scripts/lock.sh"
+exec_always --no-startup-id xautolock -time 10 -locker '/home/thomas/.scripts/lock.sh' &
 
 # Set border pixel to 0 on all windows
 for_window [class="^.*"] border pixel 0
 
-
+#shortcut for executing scrot
+bindsym --release Print exec scrot -e 'mv $f $HOME/pictures/screenshots/'
 
 gaps inner 10
 gaps outer 10

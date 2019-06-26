@@ -52,7 +52,7 @@ window:
   decorations: full
 
   # When true, alacritty starts maximized.
-  start_maximized: false
+  #start_maximized: false
 
 scrolling:
   # Maximum number of lines in the scrollback buffer.
@@ -154,10 +154,10 @@ font:
   use_thin_strokes: true
 
 # Display the time it takes to redraw each frame.
-render_timer: false
+debug.render_timer: false
 
 # Keep the log file after quitting Alacritty.
-persistent_logging: false
+debug.persistent_logging: false
 
 # If `true`, bold text is drawn using the bright color variants.
 draw_bold_text_with_bright_colors: true
@@ -166,7 +166,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x000000'
+    background: '0x2020202'
     foreground: '0xeaeaea'
 
     # Bright and dim foreground colors
@@ -270,7 +270,7 @@ visual_bell:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+background_opacity: 0.8
 
 # Mouse bindings
 #
@@ -361,7 +361,12 @@ live_config_reload: true
 #  program: /bin/bash
 #  args:
 #    - --login
-
+shell:
+    program: /bin/bash
+    args:
+        - --login
+        - -c
+        - 'tmux attach -t TMUX || tmux new -s TMUX'
 # Windows 10 ConPTY backend (Windows only)
 #
 # This will enable better color support and may resolve other issues,
