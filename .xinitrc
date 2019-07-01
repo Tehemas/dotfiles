@@ -50,7 +50,9 @@ fi
 
 twm &
 ~/.fehbg &
+#barrierc 10.0.0.102
 synergyc 10.0.0.102
+./.scripts/switch-monitor.sh
 
 exec i3
 
