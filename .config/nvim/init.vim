@@ -5,20 +5,12 @@ else
 endif
 " Plugins List
 call plug#begin(g:plugged_home)
-  " UI related
+ " UI related
   Plug 'chriskempson/base16-vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   " Better Visual Guide
   Plug 'Yggdroot/indentLine'
-  " syntax check
-  Plug 'w0rp/ale'
-  " Autocomplete
-  Plug 'ncm2/ncm2'
-  Plug 'roxma/nvim-yarp'
-  Plug 'ncm2/ncm2-bufword'
-  Plug 'ncm2/ncm2-path'
-  Plug 'ncm2/ncm2-jedi'
   " Formater
   Plug 'Chiel92/vim-autoformat'
 call plug#end()
@@ -62,8 +54,7 @@ noremap <F3> :Autoformat<CR>
 " NCM2
 augroup NCM2
   autocmd!
-  " enable ncm2 for all buffers
-  autocmd BufEnter * call ncm2#enable_for_buffer()
+  " enable ncm2 for all buffers 
   " :help Ncm2PopupOpen for more information
   set completeopt=noinsert,menuone,noselect
   " When the <Enter> key is pressed while the popup menu is visible, it only
